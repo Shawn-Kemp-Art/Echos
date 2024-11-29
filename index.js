@@ -28,6 +28,7 @@ var seed = Math.floor($fx.rand()*10000000000000000);
 var noise = new perlinNoise3d();
 noise.noiseSeed(seed);
 
+
 //FXparams
 
 definitions = [
@@ -78,7 +79,7 @@ definitions = [
         name: "Theme",
         type: "select",
         default: "AllColors",
-        options: {options: ["AllColors", "SunsetGlow", "OceanBreeze", "NaturalCalm", "VintageChic", "BoldVibrant", "WintersTwilight", "WarmSpice", "SoftPetals", "FreshGreens", "MonochromeElegance", "TropicalSplash", "AutumnWarmth", "ElegantMonochrome", "SunKissedEarth", "CitrusPunch", "FrostySky", "BoldNights", "MutedElegance", "SunnyMeadows", "UrbanContrast"]},
+        options: {options: colorPalettes},
     },
     {
         id: "framecolor",

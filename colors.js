@@ -187,6 +187,159 @@ var SunsetGlow = [
     {"Hex": "#A9D0DF", "Name": "Aqua Blue"}
   ];
 
+//var colorPalettes = ["AllColors", "SunsetGlow", "OceanBreeze", "NaturalCalm", "VintageChic", "BoldVibrant", "WintersTwilight", "WarmSpice", "SoftPetals", "FreshGreens", "MonochromeElegance", "TropicalSplash", "AutumnWarmth", "ElegantMonochrome", "SunKissedEarth", "CitrusPunch", "FrostySky", "BoldNights", "MutedElegance", "SunnyMeadows", "UrbanContrast"];
+
+
+var SunnyHorizon = [
+  {"Hex": "#F7743E", "Name": "Tangerine"},
+  {"Hex": "#C4D817", "Name": "Chartreuse"},
+  {"Hex": "#FFF35D", "Name": "Buttercup"}
+];
+
+var OceanicBliss = [
+  {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
+  {"Hex": "#4C739E", "Name": "Marine Blue"},
+  {"Hex": "#63939D", "Name": "Ocean Blue"}
+];
+
+var BoldElegance = [
+  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
+  {"Hex": "#EF4C84", "Name": "Hot Pink"},
+  {"Hex": "#FFF35D", "Name": "Buttercup"}
+];
+
+var EarthySerenity = [
+  {"Hex": "#447560", "Name": "Celtic"},
+  {"Hex": "#8A473F", "Name": "Chili"},
+  {"Hex": "#E1C76A", "Name": "Chamois"}
+];
+
+var VintageCharm = [
+  {"Hex": "#FEF6E3", "Name": "Antique White"},
+  {"Hex": "#F5E3CF", "Name": "Beige"},
+  {"Hex": "#CC9047", "Name": "Golden"}
+];
+
+var IcyPastels = [
+  {"Hex": "#CED5DB", "Name": "Clapboard"},
+  {"Hex": "#70869D", "Name": "Lavender"},
+  {"Hex": "#A999C8", "Name": "Pansy"}
+];
+
+var TropicalSunset = [
+  {"Hex": "#C4D817", "Name": "Chartreuse"},
+  {"Hex": "#F7743E", "Name": "Tangerine"},
+  {"Hex": "#AE0838", "Name": "Cardinal"}
+];
+
+var MutedHarmony = [
+  {"Hex": "#F5E3CF", "Name": "Beige"},
+  {"Hex": "#949B6F", "Name": "Valley Green"},
+  {"Hex": "#C5D785", "Name": "Pistachio"}
+];
+
+var RegalTones = [
+  {"Hex": "#AE0838", "Name": "Cardinal"},
+  {"Hex": "#A999C8", "Name": "Pansy"},
+  {"Hex": "#4C739E", "Name": "Marine Blue"}
+];
+
+var CitrusBrights = [
+  {"Hex": "#FFF35D", "Name": "Buttercup"},
+  {"Hex": "#F7743E", "Name": "Tangerine"},
+  {"Hex": "#C4D817", "Name": "Chartreuse"}
+];
+
+var ForestGlow = [
+  {"Hex": "#447560", "Name": "Celtic"},
+  {"Hex": "#CC9047", "Name": "Golden"},
+  {"Hex": "#E1C76A", "Name": "Chamois"}
+];
+
+var ContrastingNights = [
+  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
+  {"Hex": "#70869D", "Name": "Lavender"},
+  {"Hex": "#FFF35D", "Name": "Buttercup"}
+];
+
+var DelicatePetals = [
+  {"Hex": "#FBCBD7", "Name": "Hollyhock"},
+  {"Hex": "#A999C8", "Name": "Pansy"},
+  {"Hex": "#FEF6E3", "Name": "Antique White"}
+];
+
+var CoolWaves = [
+  {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
+  {"Hex": "#63939D", "Name": "Ocean Blue"},
+  {"Hex": "#CED5DB", "Name": "Clapboard"}
+];
+
+var UrbanEnergy = [
+  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
+  {"Hex": "#EF4C84", "Name": "Hot Pink"},
+  {"Hex": "#4C739E", "Name": "Marine Blue"}
+];
+
+var AutumnSpice = [
+  {"Hex": "#745042", "Name": "Burnt Sienna"},
+  {"Hex": "#8A473F", "Name": "Chili"},
+  {"Hex": "#CC9047", "Name": "Golden"}
+];
+
+var NaturalBalance = [
+  {"Hex": "#447560", "Name": "Celtic"},
+  {"Hex": "#C5D785", "Name": "Pistachio"},
+  {"Hex": "#949B6F", "Name": "Valley Green"}
+];
+
+var FreshSpring = [
+  {"Hex": "#01AE52", "Name": "Bright Green"},
+  {"Hex": "#C5D785", "Name": "Pistachio"},
+  {"Hex": "#C4D817", "Name": "Chartreuse"}
+];
+
+var RoyalContrasts = [
+  {"Hex": "#AE0838", "Name": "Cardinal"},
+  {"Hex": "#4C739E", "Name": "Marine Blue"},
+  {"Hex": "#70869D", "Name": "Lavender"}
+];
+
+var GoldenSunrise = [
+  {"Hex": "#FEF6E3", "Name": "Antique White"},
+  {"Hex": "#FFF35D", "Name": "Buttercup"},
+  {"Hex": "#CC9047", "Name": "Golden"}
+];
+
+
+
+var colorPalettes = [
+  "AllColors",
+  "SunnyHorizon",
+  "OceanicBliss",
+  "BoldElegance",
+  "EarthySerenity",
+  "VintageCharm",
+  "IcyPastels",
+  "TropicalSunset",
+  "MutedHarmony",
+  "RegalTones",
+  "CitrusBrights",
+  "ForestGlow",
+  "ContrastingNights",
+  "DelicatePetals",
+  "CoolWaves",
+  "UrbanEnergy",
+  "AutumnSpice",
+  "NaturalBalance",
+  "FreshSpring",
+  "RoyalContrasts",
+  "GoldenSunrise"
+];
+
+
+
+
+
 var lightburn = [
 {"Hex":"#0000ff", "Name":"1"},
 {"Hex":"#ff0000", "Name":"2"},
