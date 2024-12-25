@@ -57,7 +57,10 @@ var AllColors = [
     {"Hex":"#949B6F", "Name":"Valley Green"},
     ]
 
-var SunsetGlow = [
+  var colornames = AllColors.map(color => color.Name);
+
+
+  var SunsetGlow = [
     {"Hex": "#F7743E", "Name": "Tangerine"},
     {"Hex": "#CC9047", "Name": "Golden"},
     {"Hex": "#745042", "Name": "Burnt Sienna"}
@@ -116,7 +119,7 @@ var SunsetGlow = [
     {"Hex": "#0000FF", "Name": "Smooth White"},
     {"Hex": "#CED5DB", "Name": "Clapboard"}
   ];
-
+  
   var TropicalSplash = [
     {"Hex": "#01AE52", "Name": "Bright Green"},
     {"Hex": "#C4D817", "Name": "Chartreuse"},
@@ -159,182 +162,123 @@ var SunsetGlow = [
     {"Hex": "#CED5DB", "Name": "Clapboard"}
   ];
   
-  var BoldNights = [
-    {"Hex": "#4C739E", "Name": "Marine Blue"},
-    {"Hex": "#AE0838", "Name": "Cardinal"},
+  var CoolTides = [
+    {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
+    {"Hex": "#63939D", "Name": "Ocean Blue"},
+    {"Hex": "#4C739E", "Name": "Marine Blue"}
+  ];
+  
+  var BerryBright = [
+    {"Hex": "#EF4C84", "Name": "Hot Pink"},
+    {"Hex": "#FBCBD7", "Name": "Hollyhock"},
+    {"Hex": "#A999C8", "Name": "Pansy"}
+  ];
+  
+  var DesertHues = [
+    {"Hex": "#745042", "Name": "Burnt Sienna"},
+    {"Hex": "#E1C76A", "Name": "Chamois"},
+    {"Hex": "#8A473F", "Name": "Chili"}
+  ];
+  
+  var SpringBlossoms = [
+    {"Hex": "#FBCBD7", "Name": "Hollyhock"},
+    {"Hex": "#A999C8", "Name": "Pansy"},
+    {"Hex": "#FEF6E3", "Name": "Antique White"}
+  ];
+  
+  var TwilightMyst = [
+    {"Hex": "#8490A6", "Name": "Brittany Blue"},
+    {"Hex": "#70869D", "Name": "Lavender"},
+    {"Hex": "#CED5DB", "Name": "Clapboard"}
+  ];
+  
+  var UrbanVibes = [
     {"Hex": "#1A1A1A", "Name": "Smooth Black"},
+    {"Hex": "#EF4C84", "Name": "Hot Pink"},
     {"Hex": "#FFF35D", "Name": "Buttercup"}
   ];
   
-  var MutedElegance = [
-    {"Hex": "#F5E3CF", "Name": "Beige"},
-    {"Hex": "#A999C8", "Name": "Pansy"},
-    {"Hex": "#FBCBD7", "Name": "Hollyhock"},
-    {"Hex": "#8490A6", "Name": "Brittany Blue"}
-  ];
-  
-  var SunnyMeadows = [
-    {"Hex": "#CC9047", "Name": "Golden"},
+  var MeadowFresh = [
     {"Hex": "#C4D817", "Name": "Chartreuse"},
     {"Hex": "#C5D785", "Name": "Pistachio"},
-    {"Hex": "#FFF35D", "Name": "Buttercup"}
+    {"Hex": "#01AE52", "Name": "Bright Green"}
   ];
   
-  var UrbanContrast = [
+  var NightGlow = [
     {"Hex": "#1A1A1A", "Name": "Smooth Black"},
-    {"Hex": "#0000FF", "Name": "Smooth White"},
-    {"Hex": "#F7743E", "Name": "Tangerine"},
-    {"Hex": "#A9D0DF", "Name": "Aqua Blue"}
+    {"Hex": "#4C739E", "Name": "Marine Blue"},
+    {"Hex": "#0000FF", "Name": "Smooth White"}
   ];
-
-//var colorPalettes = ["AllColors", "SunsetGlow", "OceanBreeze", "NaturalCalm", "VintageChic", "BoldVibrant", "WintersTwilight", "WarmSpice", "SoftPetals", "FreshGreens", "MonochromeElegance", "TropicalSplash", "AutumnWarmth", "ElegantMonochrome", "SunKissedEarth", "CitrusPunch", "FrostySky", "BoldNights", "MutedElegance", "SunnyMeadows", "UrbanContrast"];
-
-
-var SunnyHorizon = [
-  {"Hex": "#F7743E", "Name": "Tangerine"},
-  {"Hex": "#C4D817", "Name": "Chartreuse"},
-  {"Hex": "#FFF35D", "Name": "Buttercup"}
-];
-
-var OceanicBliss = [
-  {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
-  {"Hex": "#4C739E", "Name": "Marine Blue"},
-  {"Hex": "#63939D", "Name": "Ocean Blue"}
-];
-
-var BoldElegance = [
-  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
-  {"Hex": "#EF4C84", "Name": "Hot Pink"},
-  {"Hex": "#FFF35D", "Name": "Buttercup"}
-];
-
-var EarthySerenity = [
-  {"Hex": "#447560", "Name": "Celtic"},
-  {"Hex": "#8A473F", "Name": "Chili"},
-  {"Hex": "#E1C76A", "Name": "Chamois"}
-];
-
-var VintageCharm = [
-  {"Hex": "#FEF6E3", "Name": "Antique White"},
-  {"Hex": "#F5E3CF", "Name": "Beige"},
-  {"Hex": "#CC9047", "Name": "Golden"}
-];
-
-var IcyPastels = [
-  {"Hex": "#CED5DB", "Name": "Clapboard"},
-  {"Hex": "#70869D", "Name": "Lavender"},
-  {"Hex": "#A999C8", "Name": "Pansy"}
-];
-
-var TropicalSunset = [
-  {"Hex": "#C4D817", "Name": "Chartreuse"},
-  {"Hex": "#F7743E", "Name": "Tangerine"},
-  {"Hex": "#AE0838", "Name": "Cardinal"}
-];
-
-var MutedHarmony = [
-  {"Hex": "#F5E3CF", "Name": "Beige"},
-  {"Hex": "#949B6F", "Name": "Valley Green"},
-  {"Hex": "#C5D785", "Name": "Pistachio"}
-];
-
-var RegalTones = [
-  {"Hex": "#AE0838", "Name": "Cardinal"},
-  {"Hex": "#A999C8", "Name": "Pansy"},
-  {"Hex": "#4C739E", "Name": "Marine Blue"}
-];
-
-var CitrusBrights = [
-  {"Hex": "#FFF35D", "Name": "Buttercup"},
-  {"Hex": "#F7743E", "Name": "Tangerine"},
-  {"Hex": "#C4D817", "Name": "Chartreuse"}
-];
-
-var ForestGlow = [
-  {"Hex": "#447560", "Name": "Celtic"},
-  {"Hex": "#CC9047", "Name": "Golden"},
-  {"Hex": "#E1C76A", "Name": "Chamois"}
-];
-
-var ContrastingNights = [
-  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
-  {"Hex": "#70869D", "Name": "Lavender"},
-  {"Hex": "#FFF35D", "Name": "Buttercup"}
-];
-
-var DelicatePetals = [
-  {"Hex": "#FBCBD7", "Name": "Hollyhock"},
-  {"Hex": "#A999C8", "Name": "Pansy"},
-  {"Hex": "#FEF6E3", "Name": "Antique White"}
-];
-
-var CoolWaves = [
-  {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
-  {"Hex": "#63939D", "Name": "Ocean Blue"},
-  {"Hex": "#CED5DB", "Name": "Clapboard"}
-];
-
-var UrbanEnergy = [
-  {"Hex": "#1A1A1A", "Name": "Smooth Black"},
-  {"Hex": "#EF4C84", "Name": "Hot Pink"},
-  {"Hex": "#4C739E", "Name": "Marine Blue"}
-];
-
-var AutumnSpice = [
-  {"Hex": "#745042", "Name": "Burnt Sienna"},
-  {"Hex": "#8A473F", "Name": "Chili"},
-  {"Hex": "#CC9047", "Name": "Golden"}
-];
-
-var NaturalBalance = [
-  {"Hex": "#447560", "Name": "Celtic"},
-  {"Hex": "#C5D785", "Name": "Pistachio"},
-  {"Hex": "#949B6F", "Name": "Valley Green"}
-];
-
-var FreshSpring = [
-  {"Hex": "#01AE52", "Name": "Bright Green"},
-  {"Hex": "#C5D785", "Name": "Pistachio"},
-  {"Hex": "#C4D817", "Name": "Chartreuse"}
-];
-
-var RoyalContrasts = [
-  {"Hex": "#AE0838", "Name": "Cardinal"},
-  {"Hex": "#4C739E", "Name": "Marine Blue"},
-  {"Hex": "#70869D", "Name": "Lavender"}
-];
-
-var GoldenSunrise = [
-  {"Hex": "#FEF6E3", "Name": "Antique White"},
-  {"Hex": "#FFF35D", "Name": "Buttercup"},
-  {"Hex": "#CC9047", "Name": "Golden"}
-];
-
-
-
-var colorPalettes = [
-  "AllColors",
-  "SunnyHorizon",
-  "OceanicBliss",
-  "BoldElegance",
-  "EarthySerenity",
-  "VintageCharm",
-  "IcyPastels",
-  "TropicalSunset",
-  "MutedHarmony",
-  "RegalTones",
-  "CitrusBrights",
-  "ForestGlow",
-  "ContrastingNights",
-  "DelicatePetals",
-  "CoolWaves",
-  "UrbanEnergy",
-  "AutumnSpice",
-  "NaturalBalance",
-  "FreshSpring",
-  "RoyalContrasts",
-  "GoldenSunrise"
-];
+  
+  var GentleWhisper = [
+    {"Hex": "#FEF6E3", "Name": "Antique White"},
+    {"Hex": "#CED5DB", "Name": "Clapboard"},
+    {"Hex": "#70869D", "Name": "Lavender"}
+  ];
+  
+  var CitrusTwist = [
+    {"Hex": "#F7743E", "Name": "Tangerine"},
+    {"Hex": "#FFF35D", "Name": "Buttercup"},
+    {"Hex": "#C4D817", "Name": "Chartreuse"}
+  ];
+  
+  var BlushAndGold = [
+    {"Hex": "#FBCBD7", "Name": "Hollyhock"},
+    {"Hex": "#CC9047", "Name": "Golden"},
+    {"Hex": "#F5E3CF", "Name": "Beige"}
+  ];
+  
+  var MorningDew = [
+    {"Hex": "#A9D0DF", "Name": "Aqua Blue"},
+    {"Hex": "#F5E3CF", "Name": "Beige"},
+    {"Hex": "#CED5DB", "Name": "Clapboard"}
+  ];
+  
+  var AutumnGlow = [
+    {"Hex": "#745042", "Name": "Burnt Sienna"},
+    {"Hex": "#F7743E", "Name": "Tangerine"},
+    {"Hex": "#AE0838", "Name": "Cardinal"}
+  ];
+  
+  var ForestWhisper = [
+    {"Hex": "#447560", "Name": "Celtic"},
+    {"Hex": "#C5D785", "Name": "Pistachio"},
+    {"Hex": "#949B6F", "Name": "Valley Green"}
+  ];
+  
+  var colorPalettes = [
+    "AllColors",
+    "SunsetGlow",
+    "OceanBreeze",
+    "NaturalCalm",
+    "VintageChic",
+    "BoldVibrant",
+    "WintersTwilight",
+    "WarmSpice",
+    "SoftPetals",
+    "FreshGreens",
+    "MonochromeElegance",
+    "TropicalSplash",
+    "AutumnWarmth",
+    "ElegantMonochrome",
+    "SunKissedEarth",
+    "CitrusPunch",
+    "FrostySky",
+    "CoolTides",
+    "BerryBright",
+    "DesertHues",
+    "SpringBlossoms",
+    "TwilightMyst",
+    "UrbanVibes",
+    "MeadowFresh",
+    "NightGlow",
+    "GentleWhisper",
+    "CitrusTwist",
+    "BlushAndGold",
+    "MorningDew",
+    "AutumnGlow",
+    "ForestWhisper"
+  ];
 
 
 

@@ -67,7 +67,6 @@ definitions = [
         id: "colors",
         name: "Max # of colors",
         type: "number",
-        default: 2,
         options: {
             min: 1,
             max: 12,
@@ -92,7 +91,6 @@ definitions = [
         id: "spokes",
         name: "Rays",
         type: "number",
-        default: 8,
         options: {
             min: 6,
             max: 40,
@@ -125,7 +123,6 @@ definitions = [
         id: "dripfrequency",
         name: "Chance of drips",
         type: "number",
-        default: .5,
         options: {
             min: 0,
             max: 1,
@@ -147,7 +144,7 @@ definitions = [
         id: "dripRadius",
         name: "Drip end",
         type: "number",
-        default: 6,
+        default: 10,
         options: {
             min: 1,
             max: 10,
@@ -185,6 +182,7 @@ definitions = [
             step: 10,
         },  
     },
+ 
    
     ]
 
