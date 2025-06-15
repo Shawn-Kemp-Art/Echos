@@ -636,6 +636,7 @@ document.addEventListener('keypress', (event) => {
                 } 
                 console.log("optimizing")
             }
+            console.log("plottable")
         }
 
         //new hash
