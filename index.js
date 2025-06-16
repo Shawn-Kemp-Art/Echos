@@ -113,7 +113,6 @@ definitions = [
         id: "framecolor",
         name: "Frame color",
         type: "select",
-        default: "Random",
         options: {options: ["Random","White","Mocha"]},
     },
     {
@@ -366,11 +365,11 @@ for (z = 0; z < stacks; z++) {
     
     
     outsideframe = new Path.Rectangle(new Point(0,0),new Size(wide, high), framradius)
-    sheet[stacks+1] = outsideframe;
-    sheet[stacks+1].style = {fillColor: "#ffffff", strokeColor: linecolor.Hex, strokeWidth: 1*ratio,shadowColor: new Color(0,0,0,[0.3]),shadowBlur: 20,shadowOffset: new Point((stacks-z)*2.3, (stacks-z)*2.3)};
-    sheet[stacks+1].scale(2.2);
-    sheet[stacks+1].position = new Point(paper.view.viewSize.width/2, paper.view.viewSize.height/2);
-    sheet[stacks+1].sendToBack();
+    sheet[stacks] = outsideframe;
+    sheet[stacks].style = {fillColor: "#ffffff", strokeColor: linecolor.Hex, strokeWidth: 1*ratio,shadowColor: new Color(0,0,0,[0.3]),shadowBlur: 20,shadowOffset: new Point((stacks-z)*2.3, (stacks-z)*2.3)};
+    sheet[stacks].scale(2.2);
+    sheet[stacks].position = new Point(paper.view.viewSize.width/2, paper.view.viewSize.height/2);
+    sheet[stacks].sendToBack();
 
     //floatingframe();
     //upspirestudio(features); //#render and send features to upspire.studio
