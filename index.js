@@ -596,7 +596,7 @@ document.addEventListener('keypress', (event) => {
     
        //Save as SVG 
        if(event.key == "v") {
-        sheet[stacks+1].remove();
+        sheet[stacks].remove();
             var url = "data:image/svg+xml;utf8," + encodeURIComponent(paper.project.exportSVG({asString:true}));
             var key = [];for (l=stacks;l>0;l--){key[stacks-l] = colors[l-1].Name;}; 
             var svg1 = "<!--"+key+"-->" + paper.project.exportSVG({asString:true})
