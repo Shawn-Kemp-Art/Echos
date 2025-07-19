@@ -44,6 +44,9 @@ var qcomplexity = R.random_int(1,10);
 if(new URLSearchParams(window.location.search).get('d')){qcomplexity = new URLSearchParams(window.location.search).get('d')}; //size
 qcomplexity = qcomplexity*4;
 
+//extract request variable from query string
+var requestParam = new URLSearchParams(window.location.search).get('request');
+
 
 //FXparams
 
@@ -678,10 +681,35 @@ document.addEventListener('keypress', (event) => {
             alert(interactiontext);
             }
              
-        //Save as PNG
+        //Save as PNG and send to API
         if(event.key == "p") {
-            canvas.toBlob(function(blob) {saveAs(blob, fileName+'.png');});
-            }
+            canvas.toBlob(function(blob) {
+                //save locally
+                saveAs(blob, fileName+'.png');
+
+                //convert blob to base64 and POST to API
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    var base64data = reader.result.split(',')[1];
+                    var payload = JSON.stringify({
+                        hash: $fx.hash,
+                        request: requestParam,
+                        file: {
+                            filename: fileName + '.png',
+                            content_type: 'image/png',
+                            data: base64data
+                        }
+                    });
+                    fetch('https://studio.shawnkemp.art/version-test/api/1.1/wf/singular', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: payload
+                    }).then(r => console.log('API response', r.status))
+                      .catch(e => console.error('API error', e));
+                };
+                reader.readAsDataURL(blob);
+            });
+        }
 
         //Export colors as txt
         if(event.key == "c") {
