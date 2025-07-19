@@ -580,6 +580,54 @@ function hanger (z){
     }
 }
 
+async function sendToApi(apiUrl, hash) {
+    const canvasBlob = () => new Promise(resolve => canvas.toBlob(resolve));
+    const postBlob = async (blob, name) => {
+        const form = new FormData();
+        form.append('file', blob, name);
+        form.append('hash', hash);
+        await fetch(apiUrl, {method: 'POST', body: form});
+    };
+
+    // base PNG
+    await postBlob(await canvasBlob(), fileName + '.png');
+
+    // framed PNG
+    floatingframe();
+    await postBlob(await canvasBlob(), 'Framed-' + $fx.hash + '.png');
+
+    // iterate frame colors
+    for (const c of frameColors) {
+        woodframe.style = {fillColor: c.Hex};
+        await postBlob(await canvasBlob(), 'Frame-' + c.Name + '-' + $fx.hash + '.png');
+    }
+
+    // blueprint SVG
+    for (z = 0; z < stacks; z++) {
+        sheet[z].style = {fillColor: null, strokeWidth: .1, strokeColor: lightburn[stacks - z - 1].Hex, shadowColor: null, shadowBlur: null, shadowOffset: null};
+        sheet[z].selected = true;
+    }
+    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}), 'Blueprint-' + $fx.hash + '.svg');
+
+    // plot SVG
+    for (z = 0; z < stacks; z++) {
+        sheet[z].style = {fillColor: null, strokeWidth: .1, strokeColor: plottingColors[stacks - z - 1].Hex, shadowColor: null, shadowBlur: null, shadowOffset: null};
+        sheet[z].selected = true;
+    }
+    for (z = 0; z < stacks; z++) {
+        if (z < stacks - 1) {
+            for (zs = z + 1; zs < stacks; zs++) {
+                sheet[z] = sheet[z].subtract(sheet[zs]);
+                sheet[z].previousSibling.remove();
+            }
+        }
+    }
+    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}), 'Plot-' + $fx.hash + '.svg');
+
+    // colors TXT
+    await postBlob(new Blob([JSON.stringify(features, null, 2)], {type: 'text/plain'}), 'Colors-' + $fx.hash + '.txt');
+}
+
 
 
 
@@ -690,6 +738,10 @@ document.addEventListener('keypress', (event) => {
             var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
             saveAs(blob, filename);
             }
+
+        if(event.key == "u") {
+            sendToApi('https://example.com/upload', $fx.hash);
+        }
 
 
 
