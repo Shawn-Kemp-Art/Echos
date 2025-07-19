@@ -582,24 +582,31 @@ function hanger (z){
 
 async function sendToApi(apiUrl, hash) {
     const canvasBlob = () => new Promise(resolve => canvas.toBlob(resolve));
-    const postBlob = async (blob, name) => {
-        const form = new FormData();
-        form.append('file', blob, name);
-        form.append('hash', hash);
-        await fetch(apiUrl, {method: 'POST', body: form});
+    const blobToBase64 = (blob) => new Promise(r => {
+        const reader = new FileReader();
+        reader.onloadend = () => r(reader.result.split(',')[1]);
+        reader.readAsDataURL(blob);
+    });
+    const postBlob = async (blob) => {
+        const file = await blobToBase64(blob);
+        await fetch(apiUrl, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({hash, file})
+        });
     };
 
     // base PNG
-    await postBlob(await canvasBlob(), fileName + '.png');
+    await postBlob(await canvasBlob());
 
     // framed PNG
     floatingframe();
-    await postBlob(await canvasBlob(), 'Framed-' + $fx.hash + '.png');
+    await postBlob(await canvasBlob());
 
     // iterate frame colors
     for (const c of frameColors) {
         woodframe.style = {fillColor: c.Hex};
-        await postBlob(await canvasBlob(), 'Frame-' + c.Name + '-' + $fx.hash + '.png');
+        await postBlob(await canvasBlob());
     }
 
     // blueprint SVG
@@ -607,7 +614,7 @@ async function sendToApi(apiUrl, hash) {
         sheet[z].style = {fillColor: null, strokeWidth: .1, strokeColor: lightburn[stacks - z - 1].Hex, shadowColor: null, shadowBlur: null, shadowOffset: null};
         sheet[z].selected = true;
     }
-    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}), 'Blueprint-' + $fx.hash + '.svg');
+    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}));
 
     // plot SVG
     for (z = 0; z < stacks; z++) {
@@ -622,10 +629,10 @@ async function sendToApi(apiUrl, hash) {
             }
         }
     }
-    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}), 'Plot-' + $fx.hash + '.svg');
+    await postBlob(new Blob([paper.project.exportSVG({asString: true})], {type: 'image/svg+xml'}));
 
     // colors TXT
-    await postBlob(new Blob([JSON.stringify(features, null, 2)], {type: 'text/plain'}), 'Colors-' + $fx.hash + '.txt');
+    await postBlob(new Blob([JSON.stringify(features, null, 2)], {type: 'text/plain'}));
 }
 
 
