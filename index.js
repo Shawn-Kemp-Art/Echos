@@ -22,7 +22,8 @@ console.log('#'+$fx.iteration)
 canvas.style.background = "white";
 
 //Set a seed value for Perlin
-var seed = Math.floor($fx.rand()*10000000000000000);
+//var seed = Math.floor($fx.rand()*10000000000000000);
+var seed = parseInt($fx.hash.slice(2, 10), 16);
 
 //initialize perlin noise 
 var noise = new perlinNoise3d();
