@@ -29,6 +29,7 @@ var noise = new perlinNoise3d();
 noise.noiseSeed(seed);
 
 //read in query strings
+if(new URLSearchParams(window.location.search).get('request')){var request = new URLSearchParams(window.location.search).get('request')}; //colors1
 var qcolor1 = "AllColors";
 if(new URLSearchParams(window.location.search).get('c1')){qcolor1 = new URLSearchParams(window.location.search).get('c1')}; //colors1
 var qcolor2 = "None";
@@ -580,7 +581,7 @@ function hanger (z){
     }
 }
 
-async function sendToApi(apiUrl, hash) {
+async function sendToApi(apiUrl, hash, req) {
     const canvasBlob = () => new Promise(resolve => canvas.toBlob(resolve));
     const blobToBase64 = (blob) => new Promise(r => {
         const reader = new FileReader();
@@ -592,7 +593,7 @@ async function sendToApi(apiUrl, hash) {
         await fetch(apiUrl, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({hash, file})
+            body: JSON.stringify({hash, req, file})
         });
     };
 
@@ -747,7 +748,7 @@ document.addEventListener('keypress', (event) => {
             }
 
         if(event.key == "u") {
-            sendToApi('https://studio.shawnkemp.art/version-test/api/1.1/wf/singular', $fx.hash);
+            sendToApi('https://putsreq.com/dehTuqo0tgDFwjfvDvdN', $fx.hash, request);
         }
 
 
