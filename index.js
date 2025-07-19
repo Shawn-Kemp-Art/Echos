@@ -740,7 +740,7 @@ document.addEventListener('keypress', (event) => {
             }
 
         if(event.key == "u") {
-            sendToApi('https://example.com/upload', $fx.hash);
+            sendToApi('https://studio.shawnkemp.art/version-test/api/1.1/wf/singular', $fx.hash);
         }
 
 
