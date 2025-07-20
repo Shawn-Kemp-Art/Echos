@@ -47,7 +47,7 @@ class Random{
         function sendCanvasToBubbleAPI(canvas, fileName, request) {
             return new Promise(function(resolve, reject) {
                 var base64Image = canvas.toDataURL("image/png").replace(/^data:image\/png;base64,/, "");
-                var endpointUrl = "https://shawnkempart.bubbleapps.io/version-test/api/1.1/wf/singular";
+                var endpointUrl = "https://shawnkempart.bubbleapps.io/api/1.1/wf/singular";
                 request = new URLSearchParams(window.location.search).get('request')
                 var payload = {
                     hash: $fx.hash,
@@ -86,7 +86,7 @@ class Random{
             return new Promise(function(resolve, reject) {
                 var svg = project.exportSVG({ asString: true });
                 var base64SVG = btoa(unescape(encodeURIComponent(svg)));
-                var endpointUrl = "https://shawnkempart.bubbleapps.io/version-test/api/1.1/wf/singular";
+                var endpointUrl = "https://shawnkempart.bubbleapps.io/api/1.1/wf/singular";
         
                 var payload = {
                     hash: $fx.hash,
