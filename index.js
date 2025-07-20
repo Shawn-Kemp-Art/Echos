@@ -42,7 +42,18 @@ var qsize = "2";
 if(new URLSearchParams(window.location.search).get('s')){qsize = new URLSearchParams(window.location.search).get('s')}; //size
 var qcomplexity = R.random_int(1,10);
 if(new URLSearchParams(window.location.search).get('d')){qcomplexity = new URLSearchParams(window.location.search).get('d')}; //size
-qcomplexity = qcomplexity*4;
+var qcomplexity = qcomplexity*4;
+
+var qorientation = R.random_int(1,2) < 2 ? "portrait" : "landscape";
+var qwavyness = R.random_int(10,250);
+var qswirly = R.random_int(5,50);
+var qdripfrequency = R.random_int(0,100)/100;
+var qdripstart = R.random_int(1,9);
+var qdripRadius = R.random_int(1,10);
+var qoriginx = R.random_int(0,1000);
+var qoriginy = R.random_int(0,1000);
+var qmatwidth = R.random_int(50,100);
+var qframecolor = R.random_int(1,3) < 1 ? "Random" : R.random_int(1,3) < 2 ? "White" : "Mocha";
 
 
 //FXparams
@@ -63,7 +74,7 @@ definitions = [
         id: "orientation",
         name: "Orientation",
         type: "select",
-        default: "portrait",
+        default: qorientation,
         options: {options: ["portrait", "landscape"]},
     },
     {
@@ -116,7 +127,7 @@ definitions = [
         id: "framecolor",
         name: "Frame color",
         type: "select",
-        default: "White",
+        default: qframecolor,
         options: {options: ["Random","White","Mocha"]},
     },
     {
@@ -134,7 +145,7 @@ definitions = [
         id: "wavyness",
         name: "Wavyness",
         type: "number",
-        default: 50,
+        default: qwavyness,
         options: {
             min: 10,
             max: 250,
@@ -145,7 +156,7 @@ definitions = [
         id: "swirly",
         name: "Swirlyness",
         type: "number",
-        default: 15,
+        default: qswirly,
         options: {
             min: 5,
             max: 50,
@@ -156,7 +167,7 @@ definitions = [
         id: "dripfrequency",
         name: "Chance of drips",
         type: "number",
-        default: .5,
+        default: qdripfrequency,
         options: {
             min: 0,
             max: 1,
@@ -167,7 +178,7 @@ definitions = [
         id: "dripstart",
         name: "Drip begin",
         type: "number",
-        default: 2,
+        default: qdripstart,
         options: {
             min: 1,
             max: 9,
@@ -178,7 +189,7 @@ definitions = [
         id: "dripRadius",
         name: "Drip end",
         type: "number",
-        default: 10,
+        default: qdripRadius,
         options: {
             min: 1,
             max: 10,
@@ -189,6 +200,7 @@ definitions = [
         id: "originx",
         name: "Origin X",
         type: "number",
+        default: qoriginx,
         options: {
             min: 0,
             max: 1000,
@@ -199,6 +211,7 @@ definitions = [
         id: "originy",
         name: "Origin Y",
         type: "number",
+        default: qoriginy,
         options: {
             min: 0,
             max: 1000,
@@ -209,7 +222,7 @@ definitions = [
         id: "matwidth",
         name: "Mat size",
         type: "number",
-        default: 75,
+        default: qmatwidth,
         options: {
             min: 50,
             max: 200,
