@@ -63,6 +63,7 @@ definitions = [
         id: "orientation",
         name: "Orientation",
         type: "select",
+        default: "portrait",
         options: {options: ["portrait", "landscape"]},
     },
     {
@@ -83,6 +84,7 @@ definitions = [
         id: "colors",
         name: "Max # of colors",
         type: "number",
+        default: qcolors,
         options: {
             min: 1,
             max: 12,
@@ -114,6 +116,7 @@ definitions = [
         id: "framecolor",
         name: "Frame color",
         type: "select",
+        default: "White",
         options: {options: ["Random","White","Mocha"]},
     },
     {
@@ -153,6 +156,7 @@ definitions = [
         id: "dripfrequency",
         name: "Chance of drips",
         type: "number",
+        default: .5,
         options: {
             min: 0,
             max: 1,
