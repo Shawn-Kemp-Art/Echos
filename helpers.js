@@ -24,7 +24,7 @@ class Random{
     };
     
     //#render and send features to upspire.studio
-     function upspirestudio(features) {
+     function sendFeaturesAPI(features) {
             //Add a finished creating preview selector
             var iDiv = document.createElement('div');
             iDiv.id = 'render';
@@ -33,12 +33,12 @@ class Random{
             if (features == null){features={};}
             var genurl = window.location.href;
             var attr = JSON.stringify(features).replace(/\"/g,"'")
-            var url = 'https://upspire.studio/api/1.1/wf/update-features';
+            var url = 'https://shawnkempart.bubbleapps.io/api/1.1/wf/features';
             var xhr = new XMLHttpRequest();
             xhr.open("POST", url);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = function () {if (xhr.readyState === 4) {console.log(xhr.status);console.log(xhr.responseText);}};
-            var data64 = '{"attributes":"'+attr+'","url":"'+genurl+'","hash":"'+fxhash+'"}';
+            var data64 = '{"width":"'+features.Width+'","height":"'+features.Height+'","depth":"'+features.Depth+'","layers":"'+features.Layers+'","url":"'+genurl+'","hash":"'+$fx.hash+'"}';
             xhr.send(data64);   
         };
     

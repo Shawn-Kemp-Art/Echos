@@ -396,6 +396,7 @@ for (z = 0; z < stacks; z++) {
 
      //send to shawnkemp.art
      if(new URLSearchParams(window.location.search).get('request')){sendAllExports()}; //colors1
+     //sendFeaturesAPI(features);
 
 
       var finalTime = new Date().getTime();
@@ -664,6 +665,7 @@ async function sendAllExports() {
     }
     paper.view.update();
     await sendSVGToBubbleAPI("Plotting-" + $fx.hash);
+    sendFeaturesAPI(features);
     console.log("All exports sent!");
 }
 
