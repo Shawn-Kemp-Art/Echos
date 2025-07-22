@@ -122,7 +122,7 @@ class Random{
             return new Promise(function(resolve, reject) {
                 // Encode the plain text as Base64
                 var base64Text = btoa(unescape(encodeURIComponent(textContent)));
-                var endpointUrl = "https://shawnkempart.bubbleapps.io/version-test/api/1.1/wf/singular";
+                var endpointUrl = "https://shawnkempart.bubbleapps.io/api/1.1/wf/singular";
         
                 // Build payload
                 var payload = {
