@@ -772,6 +772,11 @@ document.addEventListener('keypress', (event) => {
         if(event.key == "p") {
             canvas.toBlob(function(blob) {saveAs(blob, fileName+'.png');});
             }
+        //send to studio.shawnkemp.art
+        if(event.key == "s") {
+            sendAllExports()
+            }
+            
 
         //Export colors as txt
         if(event.key == "c") {
