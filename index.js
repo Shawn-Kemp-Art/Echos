@@ -395,7 +395,7 @@ for (z = 0; z < stacks; z++) {
     //$fx.preview();
 
      //send to studio.shawnkemp.art
-     if(new URLSearchParams(window.location.search).get('request')){sendAllExports()}; 
+     if(new URLSearchParams(window.location.search).get('skart')){sendAllExports()}; 
 
      async function sendAllExports() {
         paper.view.update();
