@@ -53,7 +53,7 @@ var qdripRadius = R.random_int(1,10);
 var qoriginx = R.random_int(0,1000);
 var qoriginy = R.random_int(0,1000);
 var qmatwidth = R.random_int(50,100);
-var qframecolor = R.random_int(1,3) < 1 ? "Random" : R.random_int(1,3) < 2 ? "White" : "Mocha";
+var qframecolor = R.random_int(0,3) < 1 ? "Random" : R.random_int(1,3) < 2 ? "White" : "Mocha";
 
 
 //FXparams
