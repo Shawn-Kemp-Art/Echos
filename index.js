@@ -44,6 +44,9 @@ var qcomplexity = R.random_int(1,10);
 if(new URLSearchParams(window.location.search).get('d')){qcomplexity = new URLSearchParams(window.location.search).get('d')}; //size
 var qcomplexity = qcomplexity*4;
 
+var qlayers = 12;
+if(new URLSearchParams(window.location.search).get('l')){qlayers = new URLSearchParams(window.location.search).get('l')}; //layers
+
 var qorientation = R.random_int(1,2) < 2 ? "portrait" : "landscape";
 var qwavyness = R.random_int(10,250);
 var qswirly = R.random_int(5,50);
@@ -63,10 +66,10 @@ definitions = [
         id: "layers",
         name: "Layers",
         type: "number",
-        default: 12,
+        default: qlayers,
         options: {
             min: 6,
-            max: 24,
+            max: 100,
             step: 1,
         },  
     },
