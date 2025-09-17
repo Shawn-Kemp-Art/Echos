@@ -93,7 +93,7 @@ var Purples =[
   {"Hex":"#A999C8", "Name":"Pansy"},
 ];
 var Pinks =[
-  {"Hex":"#FBCBD7", "Name":"Hollyhock"},
+  {"Hex":"#FBCBD7", "Name":"Hollyhock"}
 ];
 var Grays = [
   {"Hex":"#CED5DB", "Name":"Clapboard"},
