@@ -82,7 +82,6 @@ var Greens =[
   {"Hex":"#447560", "Name":"Celtic"},
   {"Hex":"#C4D817", "Name":"Chartreuse"},
   {"Hex":"#C5D785", "Name":"Pistachio"},
-  {"Hex":"#949B6F", "Name":"Valley Green"},
 ];
 var Browns =[
   {"Hex":"#745042", "Name":"Burnt Sienna"},
