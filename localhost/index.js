@@ -397,7 +397,7 @@ for (z = 0; z < stacks; z++) {
     //$fx.preview();
 
      //send to studio.shawnkemp.art
-     //studioAPI.setApiBase('http://localhost:3001');
+     studioAPI.setApiBase('http://localhost:3000');
      if(new URLSearchParams(window.location.search).get('skart')){sendAllExports()}; 
 
      async function sendAllExports() {
